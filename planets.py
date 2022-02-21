@@ -39,6 +39,16 @@ class Planet:
     def draw(self, win):
         x = self.x * self.SCALE + WIDTH / 2
         y = self.y * self.SCALE + HEIGHT / 2
+
+        if len(self.orbit) > 2: 
+            updated_points = []           
+            for point in self.orbit:
+                x, y = point
+                x = x * self.SCALE + WIDTH / 2
+                y = y * self.SCALE + HEIGHT / 2
+                updated_points.append((x, y))
+            pygame.draw.lines(win, self.color, False, updated_points, 2)
+
         pygame.draw.circle(win, self.color, (x, y), self.radius)
 
     def attraction(self, other):
@@ -87,7 +97,7 @@ def main():
     mars = Planet(-1.524 * Planet.AU, 0, 12, RED, 6.39 * 10**23)
     mars.y_velocity = 24.077 * 1000
     mercury = Planet(0.387 * Planet.AU, 0, 8, DARK_GREY, 3.30 * 10**23)
-    mercury.y_velocity = 47.4 * 1000
+    mercury.y_velocity = -47.4 * 1000
     venus = Planet(0.723 * Planet.AU, 0, 14, WHITE, 4.8685 * 10**24)
     venus.y_velocity = -35.02 * 1000
 

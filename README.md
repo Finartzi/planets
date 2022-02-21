@@ -1,6 +1,7 @@
 # Planet Simulation  - By @TechWithTim
 
 <https://www.youtube.com/watch?v=WTLPmUHTPqo>
+<https://fiftyexamples.readthedocs.io/en/latest/gravity.html>
 
 ## Virtual environment
 
